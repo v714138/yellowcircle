@@ -5,11 +5,13 @@ from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+from main_ui import Ui_MainWindow
 
-class Suprematism(QMainWindow):
+
+class Suprematism(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('untitled.ui', self)
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.draw)
     def draw(self):
         self.update()
